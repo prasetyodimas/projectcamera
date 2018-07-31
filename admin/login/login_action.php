@@ -29,7 +29,7 @@ $sql_login = mysqli_query($con,$sql) or die(mysqli_error());*/
 	    $_SESSION['password']     = $hasil ['password'];
 
 	    echo "<script>alert('Selamat datang ".$_SESSION['username']." !!')</script>";
-	    echo "<meta http-equiv=refresh content=0;url=".$site."backend/homeadmin.php?page=dashboard>";
+	    echo "<meta http-equiv=refresh content=0;url=".$site."admin/homeadmin.php?page=dashboard>";
 
 	}else{
 	    echo "<script>alert('maaf username dan password anda salah ulangi lagi !!')</script>";

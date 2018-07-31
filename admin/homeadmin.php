@@ -1,10 +1,8 @@
 <?php session_start(); error_reporting(0);
-
-include ('../inc/config.php');
-include ('../inc/function.php');
-include('../inc/header-back.php');
-include('../inc/js.php'); 
-
+	include ('../inc/config.php');
+	include ('../inc/function.php');
+	include ('../inc/header-back.php');
+	include ('../inc/js.php'); 
 ?>
 
 <!DOCTYPE html>
@@ -32,25 +30,21 @@ include('../inc/js.php');
 			<a id="menu-toggler" href="#">
 				<span></span>
 			</a> -->
-<!--sidebar-->			
-<div id="sidebar">
-	<?php
-		if(isset($_SESSION['username'])){
-			include('../inc/sidebar-back.php');
-		}
-	?>
-</div>
-<!--content -->
-<div id="main-content" class="clearfix">
-<div style='margin:10px;padding: 10px'>
+		<!--sidebar-->			
+		<div id="sidebar">
+			<?php
+				if(isset($_SESSION['username'])){
+					include('../inc/sidebar-back.php');
+				}
+			?>
+		</div>
+		<!--content -->
+		<div id="main-content" class="clearfix">
+		<div style='margin:10px;padding: 10px'>
+			<?php/* PHP Code untuk mendapatkan halaman view masing masing tabel */?>
+			<?php include "openpage.php";?>
 
-<?php/* PHP Code untuk mendapatkan halaman view masing masing tabel */?>
-<?php include "openpage.php";?>
-
-
-	</div>
-</div>
-
-	
+			</div>
+		</div>
 	</body>
 </html>

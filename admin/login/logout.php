@@ -7,7 +7,7 @@ header("location:../index.php");*/
 include "../../config/koneksi.php";
 
   	session_start();
-  	// session_destroy();
+  	session_destroy();
 	unset($_SESSION['username']);
 	unset($_SESSION['nama_lengkap']);
 	unset($_SESSION['password']);
