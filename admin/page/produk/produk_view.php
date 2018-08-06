@@ -4,16 +4,10 @@ if(empty($_SESSION['username'])){
 	echo "<p style='color:red'>akses denied</p>";
 	exit();		
 }
-
 ?>
-<style type="text/css">
-	.tables-config_fontsize{
-		font-size: 13px !important;
-	}
-</style>
 <div>
 	<h4 id="headings">Data Produk</h4>
-	<table class="table table-striped table-condensed tables-config_fontsize">
+	<table class="table table-striped tables-config_fontsize" id="">
 		<thead>
 			<tr>
 				<th>No</th>
@@ -26,24 +20,10 @@ if(empty($_SESSION['username'])){
 		<tbody>
 		<?php
 
-		//var functpaging
-		$batas  ='10';
-		$tabel  ="produk";
-		$posisi =null;
-
-		if(empty($halaman)){
-			$posisi=0;
-			$halaman=1;
-		}else{
-
-			$posisi=($halaman-1)* $batas;
-		}
-
-		$no=1;
-		$query  ="SELECT * FROM produk p JOIN kategori k ON k.idkategori=p.idkategori";		
-		$result =mysqli_query($con,$query) or die(mysql_error());
-		while($rows=mysqli_fetch_array($result)){
-
+			$no=1;
+			$query  ="SELECT * FROM produk p JOIN kategori k ON k.idkategori=p.idkategori";		
+			$result =mysqli_query($con,$query) or die(mysql_error());
+			while($rows=mysqli_fetch_array($result)){
 		?>
 		<tr>
 			<td><?php echo $no;?></td>
@@ -59,18 +39,3 @@ if(empty($_SESSION['username'])){
 		<?php $no++; } ?>	
 	</tbody>
 </table>
-
-
-<?php //============= CUT HERE for paging====================================
-	$tampil2 = mysqli_query($con,"SELECT idproduk from produk");
-	$jmldata = mysqli_num_rows($tampil2);
-	$jumlah_halaman = ceil($jmldata / $batas);
-?>
-
-<div class='pagination'> 
-	<ul>
-		<?php pagination($halaman, $jumlah_halaman, "produk"); ?>
-	</ul>
-</div>
-<div class='well'>Jumlah data :<strong><?php echo $jmldata; ?> </strong></div>
-</div>

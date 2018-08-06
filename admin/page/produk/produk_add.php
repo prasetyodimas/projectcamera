@@ -1,12 +1,10 @@
 <?php include '../config/koneksi.php';
 	
 if(empty($_SESSION['username'])){
-		echo "<p style='color:red'>akses denied</p>";
+	echo "<p style='color:red'>akses denied</p>";
 	exit();	
 }
-
 ?>
-
 <style type="text/css">
 	.config-form{
 		width: 221px !important;

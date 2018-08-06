@@ -23,21 +23,18 @@ if ($act=='tambah'){
         echo "<meta http-equiv=refresh content=0;url=$site"."backend/homeadmin.php?page=kategori>";
 	}else{
 
+		$sql    ="INSERT INTO kategori (idkategori, nama_kategori) VALUES('$idkategori','$nama_kategori')";
+		$result = mysqli_query($con,$sql);
 
+		if($result) {
+	       	echo "<script>alert('Kategori produk berhasil disimpan!');</script>";
+	        echo "<meta http-equiv=refresh content=0;url=$site"."backend/homeadmin.php?page=kategori>";
+		}else {
+	       	echo "<script>alert('Kategori produk gagal disimpan!');</script>";
+	        echo "<meta http-equiv=refresh content=0;url=$site"."backend/homeadmin.php?page=kategori>";
+		}
 
-	$sql ="INSERT INTO kategori (idkategori, nama_kategori) VALUES('$idkategori','$nama_kategori')";
-	$result = mysqli_query($con,$sql);
-
-	if($result) {
-       	echo "<script>alert('Kategori produk berhasil disimpan!');</script>";
-        echo "<meta http-equiv=refresh content=0;url=$site"."backend/homeadmin.php?page=kategori>";
-	}else {
-       	echo "<script>alert('Kategori produk gagal disimpan!');</script>";
-        echo "<meta http-equiv=refresh content=0;url=$site"."backend/homeadmin.php?page=kategori>";
 	}
-
-	/*	header('location:../homeadmin.php?page=kategori&pg=kategori_view&status=0');*/
-	}/* end of check validation */
 
 }elseif($act=='ubah'){
 
@@ -69,23 +66,19 @@ if ($act=='tambah'){
 
 }elseif ($act=='hapus') {
 		
-	$id  = $_GET['id'];
-
+	$id     = $_GET['id'];
 	$query  ="DELETE FROM kategori WHERE idkategori='$id'";
 	$result =mysqli_query($con,$query);
 
 	if ($result) {
-
 		echo "<script>alert('Kategori produk berhasil dihapus!');</script>";
         echo "<meta http-equiv=refresh content=0;url=$site"."backend/homeadmin.php?page=kategori>";
 
 	}else{
-
 		echo "<script>alert('Kategori produk gagal dihapus!');</script>";
         echo "<meta http-equiv=refresh content=0;url=$site"."backend/homeadmin.php?page=kategori>";
 
 	}
-
 
 	}
 

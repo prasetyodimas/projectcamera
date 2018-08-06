@@ -48,9 +48,9 @@ if(isset($_POST)){
 
 	//check if query successful
 	if ($result) {
-		header('location:../index.php?mod=berita&pg=berita_view&status=0');
+		header('location:../homeadmin.php?page=berita&pg=berita_view&status=0');
 	}else{
-		header('location:../index.php?mod=berita&pg=berita_view&status=1');
+		header('location:../homeadmin.php?page=berita&pg=berita_view&status=1');
 	}
 		mysql_close();
 	}

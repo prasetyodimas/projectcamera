@@ -1,11 +1,10 @@
 <?php error_reporting(0);
 if(empty($_SESSION['username'])){
 	echo "<p style='color:red'>akses denied</p>";
-exit();		
+	exit();		
 }
 	
 ?>
-
 <style type="text/css">
 	.config-form{
 		width: 221px !important;

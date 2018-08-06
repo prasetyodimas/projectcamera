@@ -1,18 +1,9 @@
 <?php
-
 if(empty($_SESSION['username'])){
-			echo "<p style='color:red'>akses denied</p>";
-		exit();		
-	}
-			
-/*if(isset($_GET['act'])) {
-	$id = $_GET['id'];
-	$sql = "delete from berita where idberita='$id' ";
-	mysql_query($sql) or die(mysql_error());*/
+	echo "<p style='color:red'>akses denied</p>";
+	exit();		
+}
 ?>
-
-
-
 <div class='bs-docs-example'>
 	<h4 id="headings">Data berita</h4>
 	<table  class="table table-striped table-condensed">
@@ -47,9 +38,9 @@ if(empty($_SESSION['username'])){
 			<td><?php echo $no;?></td>
 			<td><?php echo $rows['judul'];?></td>
 			<td>
-				<a href="index.php?mod=berita&pg=berita_form"><i class="icon-plus"></i>Tambah</a>
-				<a href="index.php?mod=berita&pg=berita_form&id=<?php echo $rows['idberita'];?>"><i class="icon-pencil"></i>Ubah</a>
-				<a href="index.php?mod=berita&pg=berita_view&act=del&id=<?php echo $rows['idberita'];?>" onclick="return confirm('Yakin data akan dihapus?') ";> 
+				<a href="homeadmin.php?page=add-berita"><i class="icon-plus"></i>Tambah</a>
+				<a href="homeadmin.php?page=berita&pg=berita_form&id=<?php echo $rows['idberita'];?>"><i class="icon-pencil"></i>Ubah</a>
+				<a href="homeadmin.php?page=berita&pg=berita_view&act=del&id=<?php echo $rows['idberita'];?>" onclick="return confirm('Yakin data akan dihapus?') ";> 
 				<i class="icon-trash"></i>Hapus</a>
 			</td>
 		</tr>
@@ -68,7 +59,7 @@ $jumlah_halaman=ceil($jmldata/$batas);
 echo "<div class='pagination'> <ul>";
 for($i=1;$i<=$jumlah_halaman;$i++); 
 
-echo "<li><a href='index.php?mod=berita&pg=berita_view&halaman=$i'>$i</a></li>";
+echo "<li><a href='homeadmin.php?page=berita&pg=berita_view&halaman=$i'>$i</a></li>";
 
 ?>
 </ul>

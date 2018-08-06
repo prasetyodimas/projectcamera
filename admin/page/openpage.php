@@ -36,7 +36,6 @@ if (isset($_GET['page'])) {
 				include ("page/stok/stok_view.php");	
 			break;
 			case 'addstok':
-				//add stok
 				include ("page/stok/stok_add.php");	
 			break;
 			case 'editstok':
@@ -45,23 +44,10 @@ if (isset($_GET['page'])) {
 			case 'berita':
 				include ("page/berita/berita_view.php");	
 			break;
+			case 'add-berita':
+				include ("page/berita/berita_form.php");	
+			break;
 	}
 }
 
-/*$pg = '';
-
-	if(!isset($_GET['pg'])) {
-		if(isset($_SESSION['username'])){
-			include ('produk/produk_view.php');
-		}
-
-		include ('login/login_form.php');
-		
-	} else {
-
-		$pg  = $_GET['pg'];
-		$mod = $_GET['mod'];
-		include $mod . '/' . $pg . ".php";
-
-}*/
 ?>

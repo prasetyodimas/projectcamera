@@ -6,8 +6,7 @@
 
 if (empty($_SESSION['username'])) {
 	echo "<script>alert('Maaf anda tidak memiliki session ID !!');</script>";
-	echo "<meta http-equiv=refresh content=2; url=".$site."/admin>";
-  	header('Location: ./');
+	echo "<meta http-equiv=refresh content=0;url=$site/admin>";
 	exit();
 }else{
 ?>

@@ -6,7 +6,6 @@ exit();
 
 $id  = $_GET['id'];
 $show = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM kategori WHERE idkategori='$id'"));
-
 //link update
 $proses ="page/kategori/kategori_proses.php?act=ubah&id="."$id";
 

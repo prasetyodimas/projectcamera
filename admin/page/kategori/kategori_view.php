@@ -1,14 +1,8 @@
-<?php error_reporting(0);
-
-include 'config/koneksi.php';
-
+<?php 
 if(empty($_SESSION['username'])){
 	echo "<p style='color:red'>akses denied</p>";
-
 	exit();		
 }
-
-
 ?>
 <style type="text/css">
 	.tables-config_fontsize{
@@ -27,25 +21,11 @@ if(empty($_SESSION['username'])){
 			</tr>
 		</thead>
 		<tbody>
-		<?php
+		<!-- <?php
 
 			$no=1;
 			$getdata_kategori  =mysqli_query($con,"SELECT * FROM kategori ORDER BY nama_kategori ASC");
-			/*$result =mysqli_query($con,$query) or die(mysqli_error());*/
 			while($rows=mysqli_fetch_array($getdata_kategori)){
-		
-
-			/*$batas   =5;
-			$halaman =$_GET['halaman'];
-			$posisi  =null;*/
-/*
-			if(empty($halaman)){
-				$posisi  =0;
-				$halaman =1;
-			}else{
-				$posisi=($halaman-1)* $batas;
-			}*/
-
 	?>
 		<tr>
 			<td><?php echo $no;?></td>
@@ -57,12 +37,12 @@ if(empty($_SESSION['username'])){
 				<a href="page/kategori/kategori_proses.php?act=hapus&id=<?php echo $rows['idkategori'];?>" onclick="return confirm('Yakin data akan dihapus?');"><i class="icon-trash"></i>Hapus</a>
 			</td>
 		</tr>
-	<?php $no++; } ?>
+	<?php $no++; } ?> -->
 		</tbody>
 	</table>
 </div>
 
-<?php //=============CUT HERE for paging====================================
+<!-- <?php //=============CUT HERE for paging====================================
 	$tampil2 = mysqli_query($con,"select idkategori from kategori");
 	$jmldata = mysqli_num_rows($tampil2);
 	$jumlah_halaman = ceil($jmldata / $batas);
@@ -76,4 +56,4 @@ if(empty($_SESSION['username'])){
 	?>
 </ul>
 </div>
-<br>Jumlah data :<?php echo $jmldata; ?>
+<br>Jumlah data :<?php echo $jmldata; ?> -->
