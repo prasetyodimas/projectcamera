@@ -1,26 +1,21 @@
 <?php
-/* Candralab Ecommerce v2.0
- * http://www.candra.web.id/
- * Candra adi putra <candraadiputra@gmail.com>
- * last edit: 15 okt 2013
- */
  if(empty($_SESSION['username'])){
-			echo "<p style='color:red'>akses denied</p>";
+		echo "<p style='color:red'>akses denied</p>";
 		exit();		
 	}
 
-$aksi = null;
-if (isset($_GET['id'])) {
-	$aksi = "edit";
-	$id = $_GET['id'];
-	//baris dibawah ini disesuaikan dengan nama tabel dan idtabelnya
-	$sql = "select * from pelanggan where idpelanggan='$id' ";
-	$result = mysql_query($sql) or die(mysql_error());
-	$data = mysql_fetch_object($result);
+	$aksi = null;
+	if (isset($_GET['id'])) {
+		$aksi = "edit";
+		$id = $_GET['id'];
+		//baris dibawah ini disesuaikan dengan nama tabel dan idtabelnya
+		$sql = "select * from pelanggan where idpelanggan='$id' ";
+		$result = mysql_query($sql) or die(mysql_error());
+		$data = mysql_fetch_object($result);
 
-} else {
-	$aksi = "tambah";
-}
+	}else {
+		$aksi = "tambah";
+	}
 ?>
 
 <!--kolom kiri-->

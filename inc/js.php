@@ -1,7 +1,7 @@
 <!--basic scripts-->
 <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="../assets/themes-back/js/jquery-ui-1.10.3.custom.min.js"></script>
-<script src="../assets/themes-back/themes/js/jquery.ui.touch-punch.min.js"></script>
+<!-- <script src="../assets/themes-back/themes/js/jquery.ui.touch-punch.min.js"></script> -->
 
 <script src="../assets/themes-back/js/jquery.slimscroll.min.js"></script>
 <script src="../assets/themes-back/js/jquery.easy-pie-chart.min.js"></script>

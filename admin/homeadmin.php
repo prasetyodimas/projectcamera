@@ -1,10 +1,16 @@
-<?php session_start(); error_reporting(0);
-	include ('../inc/config.php');
+<?php session_start();
+	include ('../config/koneksi.php');
 	include ('../inc/function.php');
 	include ('../inc/header-back.php');
 	include ('../inc/js.php'); 
-?>
 
+if (empty($_SESSION['username'])) {
+	echo "<script>alert('Maaf anda tidak memiliki session ID !!');</script>";
+	echo "<meta http-equiv=refresh content=2; url=".$site."/admin>";
+  	header('Location: ./');
+	exit();
+}else{
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<body>
@@ -25,12 +31,6 @@
 				</div><!--/.container-fluid-->
 			</div><!--/.navbar-inner-->
 		</div>
-
-		<!-- <div class="container-fluid" id="main-container">
-			<a id="menu-toggler" href="#">
-				<span></span>
-			</a> -->
-		<!--sidebar-->			
 		<div id="sidebar">
 			<?php
 				if(isset($_SESSION['username'])){
@@ -43,8 +43,9 @@
 		<div style='margin:10px;padding: 10px'>
 			<?php/* PHP Code untuk mendapatkan halaman view masing masing tabel */?>
 			<?php include "openpage.php";?>
-
 			</div>
 		</div>
 	</body>
 </html>
+
+<?php } ?>

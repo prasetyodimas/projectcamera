@@ -90,6 +90,7 @@ function update_status_login($status,$idpelanggan) {
 	
 	query("update pelanggan set status='$status' where idpelanggan='$idpelanggan'");
 }
+
 function count_stat(){
 	if(get_today_stat()<1){
 		query("insert counter(tanggal,jumlah) values(curdate(),'1')");

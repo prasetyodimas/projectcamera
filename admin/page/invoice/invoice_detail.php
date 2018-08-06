@@ -1,9 +1,4 @@
 <?php
-/* Candralab Ecommerce v2.0
- * http://www.candra.web.id/
- * Candra adi putra <candraadiputra@gmail.com>
- * last edit: 15 okt 2013
- */
 if(empty($_SESSION['username'])){
 			echo "<p style='color:red'>akses denied</p>";
 		exit();		

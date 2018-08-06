@@ -1,7 +1,6 @@
 <?php session_start();
  cek_status_login($_SESSION['username']); 
 
-
 require_once ('../../inc/config.php');
 
 //data dari berita

@@ -1,13 +1,5 @@
-<?php
-/* Candralab Ecommerce v2.0
- * http://www.candra.web.id/
- * Candra adi putra <candraadiputra@gmail.com>
- * last edit: 15 okt 2013
- */
-
-include ('../../inc/config.php');
+<?php include ('../../inc/config.php');
 //data dari pengelola
-
 if (isset($_POST)) {
 	$nama = $_POST['nama'];
 	$username = $_POST['username'];
