@@ -42,7 +42,7 @@ if (empty($_SESSION['username'])) {
 		<div id="main-content" class="clearfix">
 		<div style='margin:10px;padding: 10px'>
 			<?php/* PHP Code untuk mendapatkan halaman view masing masing tabel */?>
-			<?php include "openpage.php";?>
+			<?php include "page/openpage.php";?>
 			</div>
 		</div>
 	</body>
